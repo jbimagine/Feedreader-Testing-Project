@@ -66,6 +66,31 @@ $(function () {
          * should have two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
+        it('toggles visibility', function () {
+
+            //create a simulated trigger event
+            let event = document.createEvent('Event');
+            event.initEvent('click', false, true);
+            let menuTrigger = document.getElementsByClassName('menu-icon-link');
+
+            //loop through the class to be clicked on
+            menuTriggerFunc = () => {
+                for (let i = 0; i < menuTrigger.length; i++) {
+                    menuTrigger[i].dispatchEvent(event);
+                }
+            }
+
+            //when it first triggers the click event it sees if 
+            //triggered event is false on second click, it checks if true
+            menuTriggerFunc();
+
+            expect(document.body.classList.contains('menu-hidden')).toBe(false);
+
+            menuTriggerFunc();
+
+            expect(document.body.classList.contains('menu-hidden')).toBe(true);
+
+        });
 
     });
 
