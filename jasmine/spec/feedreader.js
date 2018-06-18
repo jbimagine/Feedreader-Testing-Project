@@ -31,6 +31,8 @@ $(function () {
          * and that the URL is not empty.
          */
         it('url defined and not empty', function () {
+            //loops through allFeeds and ensures it has a URL defined and
+            //is not empty
             allFeeds.forEach(function (el) {
                 expect(el.url).toBeDefined();
                 expect(el.url).not.toBe(0);
@@ -104,6 +106,16 @@ $(function () {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        beforeEach(function (done) {
+            loadFeed(0, done);
+        });
+
+        it('loadFeed called, completes its work, and a single entry element is in the feed container ', function (done) {
+            let cntnrEls = $('.feed .entry');
+
+            expect(cntnrEls.length).toBeGreaterThan(0);
+            done();
+        });
     });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
