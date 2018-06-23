@@ -44,7 +44,7 @@ Opera:https://www.opera.com/
 
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) -Javascript language
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Cascading Style Sheets
-* [Jasmine](https://jasmine.github.io/)
+* [Jasmine](https://jasmine.github.io/) - framework for testing JavaScript code
 
 
 
